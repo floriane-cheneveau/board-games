@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}All games in category
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% if games %}
+            <h1> {{ games.0.category.name }}</h1> <h2>Les 3 derniers jeux :</h2>
+            {% for game in games %}
+                <div class="m-5">
+                    <h2>{{ game.id }}
+                        /
+                        <a href="{{ path("game_show", { id: game.id }) }}">{{ game.name }}</a>
+                    </h2>
+                    <p>{{ game.description }}</p>
+                </div>
+            {% else %}
+                Aucun jeu trouvé.
+            {% endfor %}
+        {% endif %}
+
+        <a href="{{ path('category_index') }}" class="flex d-flex justify-content-end">
+            Retour à la liste des catégories
+        </a>
+    </div>
+{% endblock %}
