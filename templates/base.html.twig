@@ -14,8 +14,23 @@
         {% endblock %}
     </head>
     <body>
+        {% block header %}
+
+        <a href="{{ path('app_index') }}">
+        Accueil
+        </a>
+        <a href="{{ path('category_index') }}" class="flex d-flex justify-content-end">
+        catégories
+        </a>
+        <a href="{{ path('game_index') }}" class="flex d-flex justify-content-end">
+        Les jeux
+        </a>
+        {% endblock %}
+
+
+
         {% block body %}
-        <h1>bienvenue</h1>
+        <h1>Le repère du jeu</h1>
         {% endblock %}
 
     </body>
