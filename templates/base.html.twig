@@ -2,36 +2,63 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+
         <title>{% block title %}Welcome!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
         {% block header %}
-
-        <a href="{{ path('app_index') }}">
-        Accueil
-        </a>
-        <a href="{{ path('category_index') }}" class="flex d-flex justify-content-end">
-        catégories
-        </a>
-        <a href="{{ path('game_index') }}" class="flex d-flex justify-content-end">
-        Les jeux
-        </a>
-        {% endblock %}
-
-
-
+        <div class="nav">
+            <div class="navimg">
+                <img class="des" src="{{ asset('build/images/des.jpg') }}"/>
+            </div>
+            <div class="navacc">
+                <a href="{{ path('app_index') }}">
+                    accueil
+                </a>
+            </div>
+            <div class="navbutton">
+                <div class="navbuttona">
+                    <a href="{{ path('category_index') }}">
+                        catégories
+                    </a>
+                </div>
+                <div class="navbuttona">
+                    <a href="{{ path('game_index') }}">
+                        jeux
+                    </a>
+                </div>
+            </div>
+        </div>
+            {% endblock %}
+            
+            
         {% block body %}
-        <h1>Le repère du jeu</h1>
-        {% endblock %}
-
+        <div class="bodyaccueil">
+            <div>
+                <img class="des" src="{{ asset('build/images/ludothèque.jpg') }}"/>
+                <h1>Le repère du jeu</h1>
+            </div>
+            <div id="accesgame">
+                <a href="{{ path('game_index') }}">
+                    Decouvrir tous nos jeux
+                </a>
+            </div>
+            <div>
+                <a href="{{ path('game_new') }}">Ajouter un nouveau jeu de société à la liste</a>
+            </div>
+        </div>
+            {% endblock %}
+        
     </body>
 </html>

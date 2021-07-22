@@ -1,19 +1,22 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Jeu #{{ game.id }}{% endblock %}
 
 {% block body %}
+    <div class="media">
+        <img class="align-self-start mr-3" src="{{game.poster}}" alt="{{ game.name }} poster">
+    </div>
 
-<div class="media">
-  <img class="align-self-start mr-3" src="{{game.poster}}" alt="{{ game.name }} poster">
-  <div class="media-body">
-    <h1 class="mt-0">{{ game.name }}</h1>
-    <p>{{ game.description }}</p>
-    <p>Catégorie : {{ game.category.name }}</p>
-  </div>
-</div>
+    <div class="media-body">
+        <h1 class="mt-0">{{ game.name }}</h1>
+        <p>{{ game.description }}</p>
+        <p>Catégorie : {{ game.category.name }}</p>
+    </div>
+    
 
-<a href="{{ path('game_index') }}">
-    Retour à la liste des jeux
-</a>
+    <a href="{{ path('game_index') }}">Retour à la liste des jeux</a>
 
+    <a href="{{ path('game_edit', {'id': game.id}) }}">Mise à jour</a>
+
+    {{ include('game/_delete_form.html.twig') }}
 {% endblock %}

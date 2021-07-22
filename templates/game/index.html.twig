@@ -1,18 +1,38 @@
+
 {% extends 'base.html.twig' %}
+
+
 {% block title %}All games{% endblock %}
+
+
 {% block body %}
-    <h1>Tous les jeux : </h1>
+
+    <h1>Tous nos jeux: </h1>
+
     {% for game in games %}
+
         <div>
+
             <h2>{{ loop.index }} / {{ game.name }} - Catégorie : {{ game.category.name }}</h2>
+
             <p>{{ game.description }}</p>
-            {# Lien vers la fiche du jeu : #}
+            {# Lien vers la fiche de la série : #}
             <a href="{{ path("game_show", { id: game.id }) }}">Voir la fiche</a>
+
         </div>
+
     {% else %}
+
         Aucun jeu trouvé.
+
     {% endfor %}
+
+
     <a href="{{ path('app_index') }}">
+
         Retour à l'accueil
+
     </a>
+    <a href="{{ path('game_new') }}">Ajouter un nouveau jeu de société  la liste</a>
+
 {% endblock %}
