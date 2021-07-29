@@ -20,12 +20,10 @@
         {% block header %}
         <div class="nav">
             <div class="navimg">
-                <img class="des" src="{{ asset('build/images/des.jpg') }}"/>
+                <a href="{{ path('app_index') }}"><img class="des" src="/images/des.jpg"/></a>
             </div>
             <div class="navacc">
-                <a href="{{ path('app_index') }}">
-                    accueil
-                </a>
+                <h1>Le repère :</h1>
             </div>
             <div class="navbutton">
                 <div class="navbuttona">
@@ -45,16 +43,15 @@
             
         {% block body %}
         <div class="bodyaccueil">
-            <div>
-                <img class="des" src="{{ asset('build/images/ludothèque.jpg') }}"/>
-                <h1>Le repère du jeu</h1>
+            <div id="nomdusite">
+                <img class="ludotheque" src="/images/ludothèque.jpg"/>
             </div>
             <div id="accesgame">
                 <a href="{{ path('game_index') }}">
                     Decouvrir tous nos jeux
                 </a>
             </div>
-            <div>
+            <div id="createnew">
                 <a href="{{ path('game_new') }}">Ajouter un nouveau jeu de société à la liste</a>
             </div>
         </div>

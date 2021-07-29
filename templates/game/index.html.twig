@@ -8,10 +8,13 @@
 {% block body %}
 
     <h1>Tous nos jeux: </h1>
+    <div class="ajoutjeudansjeu">
+        <a href="{{ path('game_new') }}">Ajouter un nouveau jeu de société  la liste</a>
+    </div>
 
     {% for game in games %}
 
-        <div>
+        <div class="jeutheme">
 
             <h2>{{ loop.index }} / {{ game.name }} - Catégorie : {{ game.category.name }}</h2>
 
@@ -27,12 +30,12 @@
 
     {% endfor %}
 
-
-    <a href="{{ path('app_index') }}">
-
-        Retour à l'accueil
-
-    </a>
-    <a href="{{ path('game_new') }}">Ajouter un nouveau jeu de société  la liste</a>
+            <div class="buttonaccdansjeu">
+                <a href="{{ path('app_index') }}">
+                    
+                    Retour à l'accueil
+                    
+                </a>
+            </div>
 
 {% endblock %}

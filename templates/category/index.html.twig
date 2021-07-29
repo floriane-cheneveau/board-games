@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Toutes les catégories de jeux : </h1>
     {% for category in categories %}
-        <div>
+        <div class="affichagecategories">
             <h2>{{ loop.index }} / {{ category.name }}</h2>
             <a href="{{ path("category_show", { categoryId: category.id }) }}">{{ category.name }}</a>
         </div>

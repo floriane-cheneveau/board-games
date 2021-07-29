@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container">
         {% if games %}
-            <h1> {{ games.0.category.name }}</h1> <h2>Les 3 derniers jeux :</h2>
+            <h1> {{ games.0.category.name }}</h1> <h2 id="derniersjeux">Les 3 derniers jeux :</h2>
             {% for game in games %}
                 <div class="m-5">
                     <h2>{{ loop.index }} /

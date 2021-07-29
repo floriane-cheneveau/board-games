@@ -13,10 +13,13 @@
         <p>Catégorie : {{ game.category.name }}</p>
     </div>
     
-
-    <a href="{{ path('game_index') }}">Retour à la liste des jeux</a>
-
-    <a href="{{ path('game_edit', {'id': game.id}) }}">Mise à jour</a>
-
-    {{ include('game/_delete_form.html.twig') }}
+    <div id="retourjeu">
+        <a href="{{ path('game_index') }}">Retour à la liste des jeux</a>
+    </div>
+    <div id="miseajourjeu">
+        <a href="{{ path('game_edit', {'id': game.id}) }}">Mise à jour</a>
+    </div>
+    <div id="supprimerjeu">
+        {{ include('game/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
